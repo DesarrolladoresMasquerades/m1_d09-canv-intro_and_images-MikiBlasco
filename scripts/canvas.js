@@ -47,12 +47,25 @@ ctx.stroke()
 
 function draw(x ,y, z) {
 
-    if(x < 300) {
+    if(x < 300 && y < 300) {
     ctx.fillStyle = "green"
     ctx.fillRect(x, y, 50, 50)
     x += 3
     setTimeout(`draw(${x}, ${y})`,60)
     }
+    if(x > 300) {
+    ctx.fillStyle = "green"
+    ctx.fillRect(x, y, 50, 50)
+    y += 3
+    setTimeout(`draw(${x}, ${y})`,60)
+    }
+    if(y > 300) {
+    ctx.fillStyle = "green"
+    ctx.fillRect(x, y, 50, 50)
+    x-= 3
+    setTimeout(`draw(${x}, ${y})`,60)
+    }
+
 }
 draw(100,1)
 
